@@ -1,9 +1,9 @@
 %define upstream_name    POE-Quickie
-%define upstream_version 0.12
+%define upstream_version 0.13
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    %mkrel 1
 
 Summary:    A lazy way to wrap blocking code and programs
 License:    GPL+ or Artistic
