@@ -17,6 +17,7 @@ BuildRequires: perl(POE::Filter::Stream)
 BuildRequires: perl(POE::Session)
 BuildRequires: perl(POE::Wheel::Run)
 BuildRequires: perl(Test::More)
+BuildRequires: perl(Test::Deep)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
