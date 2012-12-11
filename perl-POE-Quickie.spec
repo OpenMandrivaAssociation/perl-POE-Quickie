@@ -1,25 +1,25 @@
 %define upstream_name    POE-Quickie
 %define upstream_version 0.17
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    A lazy way to wrap blocking code and programs
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	A lazy way to wrap blocking code and programs
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Capture::Tiny)
-BuildRequires: perl(POE)
-BuildRequires: perl(POE::Filter::Stream)
-BuildRequires: perl(POE::Session)
-BuildRequires: perl(POE::Wheel::Run)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(Test::Deep)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Capture::Tiny)
+BuildRequires:	perl(POE)
+BuildRequires:	perl(POE::Filter::Stream)
+BuildRequires:	perl(POE::Session)
+BuildRequires:	perl(POE::Wheel::Run)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Test::Deep)
+BuildArch:	noarch
 
 %description
 If you need nonblocking access to an external program, or want to execute
@@ -41,24 +41,47 @@ which are exported by default.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml LICENSE README META.json
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Tue May 31 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.170.0-1mdv2011.0
++ Revision: 682143
+- update to new version 0.17
+
+* Sun May 22 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.160.0-1
++ Revision: 677433
+- update to new version 0.16
+
+* Mon May 02 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.140.0-1
++ Revision: 662201
+- update to new version 0.14
+
+* Thu Apr 28 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.130.0-1
++ Revision: 660011
+- update to new version 0.13
+
+* Sun Apr 24 2011 Funda Wang <fwang@mandriva.org> 0.120.0-4
++ Revision: 658279
+- rebuild
+- rebuild
+
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.120.0-2
++ Revision: 657810
+- rebuild for updated spec-helper
+
+* Sat Dec 25 2010 Shlomi Fish <shlomif@mandriva.org> 0.120.0-1mdv2011.0
++ Revision: 624901
+- import perl-POE-Quickie
 
