@@ -1,2 +1,4 @@
+removed_sources:
+  POE-Quickie-0.17.tar.gz: c17b924102af597d010ba799e8bf1df23ca9b465
 sources:
-  "POE-Quickie-0.17.tar.gz": c17b924102af597d010ba799e8bf1df23ca9b465
+  POE-Quickie-0.18.tar.gz: ec6478e6907a3b018c9fe8537c7612d9a80c7e4e
