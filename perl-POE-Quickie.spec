@@ -8,7 +8,7 @@ Release:	3
 Summary:	A lazy way to wrap blocking code and programs
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/POE/POE-Quickie-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
