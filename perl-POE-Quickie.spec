@@ -2,14 +2,14 @@
 %define upstream_version 0.18
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	4
 
 Summary:	A lazy way to wrap blocking code and programs
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/POE/POE-Quickie-%{upstream_version}.tar.gz
+Url:		https://github.com/hinrik/poe-quickie
+Source0:	https://cpan.metacpan.org/authors/id/H/HI/HINRIK/POE-Quickie-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
