@@ -1,15 +1,13 @@
 %define upstream_name    POE-Quickie
-%define upstream_version 0.18
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	0.18
+Release:	5
 
 Summary:	A lazy way to wrap blocking code and programs
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/hinrik/poe-quickie
-Source0:	https://cpan.metacpan.org/authors/id/H/HI/HINRIK/POE-Quickie-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/H/HI/HINRIK/POE-Quickie-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -39,7 +37,7 @@ way LWP::UserAgent::POE does. This is provided by the /FUNCTIONS functions
 which are exported by default.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
